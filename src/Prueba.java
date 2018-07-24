@@ -13,11 +13,11 @@ public class Prueba extends Main {
 		AndroidDriver<AndroidElement> driver = Capabilities();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
-		MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[9]/android.widget.TextView");
+		MobileElement el1 = driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[9]/android.widget.TextView");
 		el1.click();
-		MobileElement el2 = (MobileElement) driver.findElementById("com.seat.myseat.dev:id/selectButton");
+		MobileElement el2 = driver.findElementById("com.seat.myseat.dev:id/selectButton");
 		el2.click();
-		MobileElement el3 = (MobileElement) driver.findElementById("com.seat.myseat.dev:id/myseat_activity_language_country_start_button");
+		MobileElement el3 = driver.findElementById("com.seat.myseat.dev:id/myseat_activity_language_country_start_button");
 		el3.click();
 //		(new TouchAction(driver))
 //		  .press({x: 1168, y: 1379})
@@ -49,16 +49,16 @@ public class Prueba extends Main {
 //		  .release()
 //		  .perform()
 		  
-		MobileElement el4 = (MobileElement) driver.findElementById("com.seat.myseat.dev:id/myseat_welcome_start_button");
+		MobileElement el4 = driver.findElementById("com.seat.myseat.dev:id/myseat_welcome_start_button");
 		el4.click();
-		MobileElement el5 = (MobileElement) driver.findElementById("com.seat.myseat.dev:id/fragment_login_go_button");
+		MobileElement el5 = driver.findElementById("com.seat.myseat.dev:id/fragment_login_go_button");
 		el5.click();
-		MobileElement el7 = (MobileElement) driver.findElementById("email");
+		MobileElement el7 = driver.findElementById("email");
 		el7.sendKeys("agato@opentrends.net");
-		MobileElement el8 = (MobileElement) driver.findElementById("password");
+		MobileElement el8 = driver.findElementById("password");
 		el8.sendKeys("Charlie20$");
 		
-		MobileElement el9 = (MobileElement) driver.findElementById("submit-button");
+		MobileElement el9 = driver.findElementById("submit-button");
 		el9.click();
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

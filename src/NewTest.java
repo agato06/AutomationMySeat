@@ -62,7 +62,7 @@ public class NewTest extends Main {
 			driver.findElementById("submit-button").click();
 			
 			
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 	
   }
@@ -73,7 +73,7 @@ public class NewTest extends Main {
 	
 	}
 	
-	@BeforeTest
+	@Test
 	public void UninstallApp() throws MalformedURLException {
 		System.out.println("beforeTest");
 
