@@ -5,8 +5,8 @@
     <classes>
       <class name="NewTest">
         <methods>
+          <include name="Test2"/>
           <include name="InstallApp"/>
-          <include name="Launching"/>
         </methods>
       </class> <!-- NewTest -->
     </classes>

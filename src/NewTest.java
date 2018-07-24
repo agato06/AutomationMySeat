@@ -22,6 +22,7 @@ public class NewTest extends Main {
 			driver.findElementById("com.seat.myseat.dev:id/selectButton").click();
 			driver.findElementById("com.seat.myseat.dev:id/myseat_activity_language_country_start_button").click();
 
+			
 //			(new TouchAction(driver))
 //			  .press({x: 1168, y: 1379})
 //			  .moveTo({x: 356: y: 1379})
@@ -71,7 +72,7 @@ public class NewTest extends Main {
 		AndroidDriver<AndroidElement> driver = Capabilities();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
-		driver.findElementByAccessibilityId("Menu").click();
+		driver.findElementByXPath("//android.widget.TextView[@content-desc='Menu']").click();
 		
 		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.LinearLayout").click();
 
