@@ -15,13 +15,13 @@ class Main {
 		// TODO Auto-generated method stub
 
 		//File f= new File ("src");
-		File fs= new File("C:\\Users\\Agato\\Desktop\\mySeatApp-dev-debug.apk");
+		File fs= new File("C:\\temp\\mySeatApp-dev-debug.apk");
 			
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Samsung S6");
-		capabilities.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Demo PixelXL");
+		capabilities.setCapability(MobileCapabilityType.APP, "C:\\temp\\mySeatApp-dev-debug.apk");
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.0");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 		capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 
 		AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
