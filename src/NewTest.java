@@ -12,8 +12,8 @@ import io.appium.java_client.android.AndroidElement;
 
 public class NewTest extends Main {
   
-	@Test
-  public void Launching() throws MalformedURLException {
+	@Test (priority=1)
+  public void Test1() throws MalformedURLException {
 	// TODO Auto-generated method stub
 			AndroidDriver<AndroidElement> driver = Capabilities();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -66,10 +66,20 @@ public class NewTest extends Main {
 			driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 	
   }
-	@Test
-	  public void OpenedSession() throws MalformedURLException {
+	@Test(priority=2)
+	  public void Test2() throws MalformedURLException {
+		AndroidDriver<AndroidElement> driver = Capabilities();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		driver.findElementByAccessibilityId("Menu").click();
+		
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.LinearLayout").click();
+
+		driver.findElementById("com.seat.myseat.dev:id/help_symbol_regonition_button").click();
 	
-		System.out.println("Prueba2");
+		driver.findElementById("com.seat.myseat.dev:id/dialog_connect_your_car_not_now_seatbutton").click();
+
+		System.out.println("Compleate end to end");
 	
 	}
 	
@@ -82,11 +92,6 @@ public class NewTest extends Main {
 	public void InstallApp() throws MalformedURLException {
 		
 		System.out.println("afterTest");
-		
-//		AndroidDriver<AndroidElement> driver = Capabilities();
-//		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//		
-//		driver.removeApp("com.seat.myseat");
 
 
 	
