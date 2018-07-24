@@ -5,7 +5,6 @@
     <classes>
       <class name="NewTest">
         <methods>
-          <include name="UninstallApp"/>
           <include name="InstallApp"/>
           <include name="Launching"/>
         </methods>
