@@ -5,8 +5,9 @@
     <classes>
       <class name="NewTest">
         <methods>
+          <include name="tearDown"/>
+          <include name="Capabilities"/>
           <include name="Test2"/>
-          <include name="InstallApp"/>
         </methods>
       </class> <!-- NewTest -->
     </classes>

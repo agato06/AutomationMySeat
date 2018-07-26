@@ -3,10 +3,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.exec.OS;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import javax.naming.NameNotFoundException;
 
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -14,8 +17,9 @@ class Main {
 
 	static AndroidDriver<AndroidElement> driver;
 	String fs;
+	public static final String testDataExcelFileName="data.xlsx";
 	//public static OS executionOS = OS.;
-	
+	@BeforeSuite
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 		// TODO Auto-generated method stub
 		
@@ -46,20 +50,29 @@ class Main {
 //	                break;
 		
 		File fs= new File("C:\\temp\\mySeatApp-dev-debug.apk");
-	
+//	
+//		DesiredCapabilities capabilities = new DesiredCapabilities();
+//		capabilities.setCapability("deviceName", "Demo PixelXL");
+//		capabilities.setCapability("app", fs.getAbsolutePath());
+//		capabilities.setCapability("platformName", "Android");
+//		capabilities.setCapability("plaformVersion", "9.0");
+//		capabilities.setCapability("appWaitActivity", "SplashActivity, SplashActivity,OtherActivity, *, *.SplashActivity");
+
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "Galaxy S6");
 		capabilities.setCapability("app", fs.getAbsolutePath());
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("plaformVersion", "7.0");
 		capabilities.setCapability("appWaitActivity", "SplashActivity, SplashActivity,OtherActivity, *, *.SplashActivity");
-
+		capabilities.setCapability("fullReset", false);
+		capabilities.setCapability("noReset", true);
 		
 		try {
 
 			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 			
 		} catch (MalformedURLException e) {
+			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -67,7 +80,9 @@ class Main {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return driver ;
 		
-		
-		
 	}
+    @AfterSuite
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

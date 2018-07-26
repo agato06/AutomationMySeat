@@ -1,8 +1,6 @@
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -13,7 +11,7 @@ import io.appium.java_client.android.AndroidElement;
 public class NewTest extends Main {
   
 	@Test (priority=1)
-  public void Test1() throws MalformedURLException {
+  public void Test1() throws MalformedURLException, InterruptedException {
 	// TODO Auto-generated method stub
 			AndroidDriver<AndroidElement> driver = Capabilities();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -22,52 +20,28 @@ public class NewTest extends Main {
 			driver.findElementById("com.seat.myseat.dev:id/selectButton").click();
 			driver.findElementById("com.seat.myseat.dev:id/myseat_activity_language_country_start_button").click();
 
-			
-//			(new TouchAction(driver))
-//			  .press({x: 1168, y: 1379})
-//			  .moveTo({x: 356: y: 1379})
-//			  .release()
-//			  .perform()
-//			  
-//			(new TouchAction(driver))
-//			  .press({x: 1223, y: 1401})
-//			  .moveTo({x: 339: y: 1418})
-//			  .release()
-//			  .perform()
-//			  
-//			(new TouchAction(driver))
-//			  .press({x: 1245, y: 1390})
-//			  .moveTo({x: 489: y: 1379})
-//			  .release()
-//			  .perform()
-//			  
-//			(new TouchAction(driver))
-//			  .press({x: 1123, y: 1457})
-//			  .moveTo({x: 272: y: 1457})
-//			  .release()
-//			  .perform()
-//			  
-//			(new TouchAction(driver))
-//			  .press({x: null, y: null})
-//			  .moveTo({x: 206: y: 890})
-//			  .release()
-//			  .perform()
+		     driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout").click();
+		     		    
 			  
 			driver.findElementById("com.seat.myseat.dev:id/myseat_welcome_start_button").click();
 			driver.findElementById("com.seat.myseat.dev:id/fragment_login_go_button").click();
-			driver.findElementById("email").click();
-			driver.findElementById("email").sendKeys("agato@opentrends.net");
-			driver.findElementById("password").click();
-			driver.findElementById("password").sendKeys("Charlie20$");
+			MobileElement el2 = (MobileElement) driver.findElementById("email");
+			
+			el2.click();
+			el2.clear();
+			
+			el2.sendKeys("agato@opentrends.net");
+			
+			MobileElement el3 = (MobileElement) driver.findElementById("password");
+			el3.click();
+			el3.clear();
+			el3.sendKeys("Charlie20$");
 			
 			driver.findElementById("submit-button").click();
-			
-			
-			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-			driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
+			Thread.sleep(10000); 
 	
   }
-	@Test(priority=2)
+		@Test(priority=2)
 	  public void Test2() throws MalformedURLException {
 		AndroidDriver<AndroidElement> driver = Capabilities();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -84,17 +58,6 @@ public class NewTest extends Main {
 	
 	}
 	
-	@Test
-	public void UninstallApp() throws MalformedURLException {
-		System.out.println("beforeTest");
-
-	}
-	@AfterTest
-	public void InstallApp() throws MalformedURLException {
-		
-		System.out.println("afterTest");
 
 
-	
-	}
 }
