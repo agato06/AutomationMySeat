@@ -1,7 +1,6 @@
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
@@ -9,9 +8,10 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class NewTest extends Main {
-  
+
+
 	@Test (priority=1)
-  public void Test1() throws MalformedURLException, InterruptedException {
+	public void Test1() throws MalformedURLException, InterruptedException{
 	// TODO Auto-generated method stub
 			AndroidDriver<AndroidElement> driver = Capabilities();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -21,7 +21,8 @@ public class NewTest extends Main {
 			driver.findElementById("com.seat.myseat.dev:id/myseat_activity_language_country_start_button").click();
 
 		     driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout").click();
-		     		    
+
+		     
 			  
 			driver.findElementById("com.seat.myseat.dev:id/myseat_welcome_start_button").click();
 			driver.findElementById("com.seat.myseat.dev:id/fragment_login_go_button").click();
@@ -30,19 +31,19 @@ public class NewTest extends Main {
 			el2.click();
 			el2.clear();
 			
-			el2.sendKeys("agato@opentrends.net");
+			el2.sendKeys("agato@opentrends.net");//"agato@opentrends.net"
 			
 			MobileElement el3 = (MobileElement) driver.findElementById("password");
 			el3.click();
 			el3.clear();
-			el3.sendKeys("Charlie20$");
+			el3.sendKeys("Charlie20");//"Charlie20$"
 			
 			driver.findElementById("submit-button").click();
 			Thread.sleep(10000); 
 	
   }
-		@Test(priority=2)
-	  public void Test2() throws MalformedURLException {
+	 @Test(priority=2)
+	 public void Test2() throws MalformedURLException {
 		AndroidDriver<AndroidElement> driver = Capabilities();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
@@ -58,6 +59,5 @@ public class NewTest extends Main {
 	
 	}
 	
-
 
 }

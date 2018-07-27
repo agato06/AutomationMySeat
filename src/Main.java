@@ -3,11 +3,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import javax.naming.NameNotFoundException;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -16,16 +13,12 @@ import io.appium.java_client.android.AndroidElement;
 class Main {
 
 	static AndroidDriver<AndroidElement> driver;
-	String fs;
-	public static final String testDataExcelFileName="data.xlsx";
-	//public static OS executionOS = OS.;
+	
 	@BeforeSuite
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
-		// TODO Auto-generated method stub
-		
 
 		//File f= new File ("src");
-//		 DesiredCapabilities capabilities = new DesiredCapabilities();
+//		DesiredCapabilities capabilities = new DesiredCapabilities();
 //	        switch(executionOS){
 //	            case ANDROID:
 //	                File classpathRoot = new File(System.getProperty("user.dir"));
